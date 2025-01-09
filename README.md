@@ -133,13 +133,9 @@ The game operates in three main states:
 
 ## Documentation
 
-- [Detailed Project Report](docs/final_project_report.pdf)
-- [Project Presentation](docs/presentation.pdf)
-- [Demo Video](https://youtube.com/your_video_link)
-
-## Setup and Installation
-
-[To be added: Installation instructions, dependencies, and setup guide]
+- [Detailed Project Report](Group35_report.pdf)
+- [Project Presentation](https://www.canva.com/design/DAGaCRbx3tg/HTDB96O4IzQQ8oM4ln9F8Q/view?utm_content=DAGaCRbx3tg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2d9bf06539)
+- [Demo Video](https://youtu.be/EwKt1k8-8NU?si=IR1JhvqpW1Wz0nYg)
 
 ## Development
 
@@ -154,10 +150,6 @@ This project is developed using:
 - Enhanced hardware durability
 - Additional gameplay features
 - Potential parkour-style game integration
-
-## License
-
-[To be added: License information]
 
 ---
 
