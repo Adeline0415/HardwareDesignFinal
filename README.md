@@ -1,5 +1,4 @@
 # It's On Heat: An FPGA-Based Interactive Sports Gaming Device
-2024 Hardware Design Final Project 
 
 A Harry Potter-themed interactive gaming device combining FPGA technology with physical interaction, developed as the final project for the 2024 Hardware Design and Lab course at National Tsing Hua University.
 
@@ -7,7 +6,7 @@ A Harry Potter-themed interactive gaming device combining FPGA technology with p
 
 "It's On Heat" is an innovative sports gaming device that combines FPGA technology with interactive hardware, creating an immersive gaming experience inspired by the magical world of Harry Potter. Players must navigate through fire hazards to capture the Golden Snitch, using physical game tiles as the primary input mechanism.
 
-![Game Hardware Design Overview](assets/hardware_overview.png)
+![Game Hardware Design Overview](assets/hardware_overview.jpg)
 
 ## Features
 
@@ -17,6 +16,39 @@ A Harry Potter-themed interactive gaming device combining FPGA technology with p
 - Arduino Nano 33 IoT for sound playback
 - VGA display output
 - Physical interaction through stepping tiles
+
+## Software Architecture
+
+### Block Diagram
+![System Block Diagram](assets/block_diagram.png)
+
+The software system consists of several key modules:
+
+#### Game Controller Module
+- Central processing unit managing game logic
+- Implements FSM for game state control
+- Handles fire pattern generation and gold management
+- Manages collision detection system
+
+#### Display Controller Module
+- Manages VGA rendering (640x480 resolution)
+- Handles memory management for sprites and images
+- Controls animation system with frame counting
+- Implements layering system for proper element visibility
+
+### Finite State Machine (FSM)
+![Game State Machine](assets/fsm.png)
+
+The game operates in three main states:
+- **INIT**: Initial state, displays title screen
+- **PLAY**: Main gameplay state, processes:
+  - Player movement
+  - Collision detection
+  - Score/life management
+  - Pattern generation
+- **FINISH**: End state (WIN/LOSS conditions)
+  - Transitions to WIN when score reaches 3
+  - Transitions to LOSS when life reaches 0
 
 ### Game Mechanics
 - Three game states: INIT, PLAY, and FINISH
@@ -35,13 +67,40 @@ A Harry Potter-themed interactive gaming device combining FPGA technology with p
 
 ## System Architecture
 
-![Hardware Connection Overview](assets/hardware_connection.png)
+![Hardware Connection Overview](assets/hardware_connection.jpg)
 
 ### Physical Design
 - 3x3 grid of interactive tiles
 - Durable construction with improved signal stability
 - Jump wire implementation for reliable signal transmission
 - Enhanced switch mechanism with foam adhesive and elastic bands
+
+## Implementation Details
+
+### Game Logic Implementation
+1. **Fire Pattern Generation**
+   - LFSR-based pattern generation
+   - 2-second update cycle (clk_div28)
+   - Pattern complexity control with masking
+   - Dynamic pattern validation
+
+2. **Collision Detection System**
+   - Edge-triggered detection mechanism
+   - 9-bit hit bitmap implementation
+   - Separate handling for fire damage and gold collection
+   - State-based visibility control
+
+3. **Animation System**
+   - 6-frame sprite animation system
+   - 20-bit counter for frame timing
+   - Separate memory blocks for different sprite types
+   - Transparency handling for smooth rendering
+
+4. **Memory Management**
+   - Block RAM utilization for sprite storage
+   - Efficient address calculation
+   - Multiple image resource handling
+   - Dynamic memory access control
 
 ## Technical Challenges & Solutions
 
