@@ -20,7 +20,9 @@ A Harry Potter-themed interactive gaming device combining FPGA technology with p
 ## Software Architecture
 
 ### Block Diagram
-![System Block Diagram](assets/block_diagram.png)
+![System Block Diagram](assets/whole_block_diagram.png)
+![System Block Diagram](assets/block_diagram_1.png)
+![System Block Diagram](assets/block_diagram_2.png)
 
 The software system consists of several key modules:
 
